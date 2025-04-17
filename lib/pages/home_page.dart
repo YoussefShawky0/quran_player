@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quran_player/widgets/QuranPlayerWidget.dart';
+import 'package:quran_player/lists/quran_list.dart';
+import 'package:quran_player/widgets/quran_player_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,22 +28,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: [
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-          QuranPlayerWidget(),
-        ],
+        children: quranAudio.map((e) => QuranPlayerWidget(item: e)).toList(),
       ),
     );
   }
